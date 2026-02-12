@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    background: linear-gradient(to top, #87CEEB, #ffffff);
+    font-family: Arial;
+}
+
+canvas {
+    background: #e0f7ff;
+    border: 3px solid black;
+    margin-top: 10px;
+    touch-action: none;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+}
