@@ -1,17 +1,127 @@
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    transition: 0.3s;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #ff4d4d;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #111;
+    color: white;
+}
+
+.logo-3d {
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff4d4d, #4da6ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.header-right input {
+    padding: 6px;
+}
+
+.hero {
+    height: 420px;
+    background: linear-gradient(135deg, #ff512f, #dd2476, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
     text-align: center;
-    background: linear-gradient(to top, #87CEEB, #ffffff);
-    font-family: Arial;
 }
 
-canvas {
-    background: #e0f7ff;
-    border: 3px solid black;
-    margin-top: 10px;
-    touch-action: none;
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
-button {
-    padding: 10px 20px;
+.birds svg {
+    margin: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+.games {
+    padding: 40px;
+    text-align: center;
+}
+
+.game-card {
+    display: inline-block;
+    width: 250px;
+    background: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-card a {
+    display: inline-block;
     margin-top: 10px;
+    padding: 8px 20px;
+    background: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Dark Mode */
+body.dark {
+    background: #111;
+    color: white;
+}
+
+body.dark .game-card {
+    background: #222;
 }
